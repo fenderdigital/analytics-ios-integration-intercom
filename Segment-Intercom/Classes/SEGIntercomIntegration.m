@@ -52,7 +52,7 @@
         return;
     }
     
-    if (payload.userId) {
+    if (payload.userId && payload.traits[@"subscription"]) {
         [self.intercom registerUserWithUserId:payload.userId];
         SEGLog(@"[Intercom registerUserWithUserId:%@];", payload.userId);
     } else if (payload.anonymousId) {
